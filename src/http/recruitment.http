@@ -1,0 +1,7 @@
+# baseURL
+@baseURL = http://localhost:3000
+
+###
+# Recruitment
+POST {{ baseURL }}/recruitment
+Content-Type: application/json
