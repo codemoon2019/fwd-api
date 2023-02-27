@@ -16,6 +16,11 @@ class BOPService {
         return createNewBOP;
       }
 
+      public async findAllBop(): Promise<User[]> {
+        const users: BOP[] = await BOPModel.query().select().from('bop');
+        return users;
+      }
+
 }
 
 export default BOPService;

@@ -15,6 +15,9 @@ class RecruitmentRoute implements Routes {
 
   private initializeRoutes() {
     this.router.post(`${this.path}`, validationMiddleware(CreateRecruiterApplicationDTO, 'body'), this.recruitmentController.registerRecruit);
+    this.router.get(`${this.path}/list`, this.recruitmentController.getAllRecruits);
+    this.router.get(`${this.path}/assigned-list`, this.recruitmentController.getAllAssignedRecruits);
+    this.router.put(`${this.path}/assign-agent/:id(\\d+)`, this.recruitmentController.assignAgent);
   }
 }
 
