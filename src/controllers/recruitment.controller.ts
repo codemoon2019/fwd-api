@@ -47,6 +47,18 @@ class RecruitmentController {
       next(error);
     }
   };
+
+  public markPresent = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      const recruitId = Number(req.params.id);
+      const assignAgent = await this.recruitmentService.markPresent(recruitId);
+
+      res.status(200).json({ data: assignAgent, message: 'markPresent' });
+    } catch (error) {
+      next(error);
+    }
+  };
+
 }
 
 export default RecruitmentController;

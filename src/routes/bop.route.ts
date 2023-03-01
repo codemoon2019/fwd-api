@@ -16,6 +16,7 @@ class BOPRoute implements Routes {
   private initializeRoutes() {
     this.router.post(`${this.path}`, validationMiddleware(CreateBOPDTO, 'body'), this.bopController.createNewBOP);
     this.router.get(`${this.path}/list`, this.bopController.getAllBops);
+    this.router.get(`${this.path}/list-dropdown`, this.bopController.getAllBopFilterByCurrentDate);
   }
 }
 

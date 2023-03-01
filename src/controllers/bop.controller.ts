@@ -26,6 +26,16 @@ class BOPController {
     }
   };
 
+  public getAllBopFilterByCurrentDate = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      const findAllBopFilterByCurrentDate = await this.bopService.findAllBopFilterByCurrentDate();
+
+      res.status(200).json({ data: findAllBopFilterByCurrentDate, message: 'findAllBopFilterByCurrentDate' });
+    } catch (error) {
+      next(error);
+    }
+  };
+
 }
 
 export default BOPController;

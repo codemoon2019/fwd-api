@@ -16,6 +16,7 @@ export class Recruitments extends Model implements RecruitmentFormData {
   isRecruit!: string;
   recruiter!: string;
   branch!: string;
+  isPresent!: string;
 
   static tableName = 'recruits'; // database table name
   static idColumn = 'id'; // id column name
